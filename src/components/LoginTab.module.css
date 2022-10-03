@@ -1,0 +1,21 @@
+.login-tab{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+.login-tab i{
+    margin-right: 5px;
+}
+
+.login-tab span{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.login-tab:hover{
+    transition: 0.1s ease-in-out;
+    background: #010010;
+    color: #f1ffff;
+    cursor: pointer;
+}

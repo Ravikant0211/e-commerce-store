@@ -1,0 +1,21 @@
+.register-tab{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+.register-tab i{
+    margin-right: 5px;
+}
+
+.register-tab span{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.register-tab:hover{
+    transition: 0.1s ease-in-out;
+    background: #010010;
+    color: #f1ffff;
+    cursor: pointer;
+ }

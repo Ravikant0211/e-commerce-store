@@ -1,0 +1,11 @@
+.loader {
+    width: 255px;
+    height: 240px;
+    margin: 8% auto;
+}
+.loader img {
+    display: inline-block;
+    background-color: #dfe5e5;
+    box-shadow: none;
+    border-radius: 0px;
+}
