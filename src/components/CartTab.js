@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
-import styles from './CartTab.module.css';
+import CartContext from "../store/cart-context";
+
+import styles from "./CartTab.module.css";
 
 const CartTab = () => {
+  const cartCtx = useContext(CartContext);
+  const items = cartCtx.items.length;
+
   return (
-    <div className={styles['cart-tab']}>
-        <i className='fas fa-cart-shopping'></i>
-        <span>Cart (0)</span>
-    </div>
-  )
-}
+    <Link to="/cart">
+      <div className={styles["cart-tab"]}>
+        <i className="fas fa-cart-shopping"></i>
+        <span>Cart ({<strong>{items}</strong>})</span>
+      </div>
+    </Link>
+  );
+};
 
 export default CartTab;
