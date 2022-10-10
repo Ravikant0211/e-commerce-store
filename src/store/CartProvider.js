@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
 import CartContext from "./cart-context";
 
@@ -6,6 +6,9 @@ const defaultCartState = {
   items: [],
   totalAmount: 0,
 };
+
+const cartStateFromLocalStorage =
+  JSON.parse(localStorage.getItem("cart")) || defaultCartState;
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
@@ -34,6 +37,7 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+
   if (action.type === "REMOVE") {
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.id
@@ -54,7 +58,7 @@ const cartReducer = (state, action) => {
 
     return {
       items: updatedItems,
-      totalAmount: updatedTotalAmount,
+      totalAmount: updatedTotalAmount > 0 ? updatedTotalAmount : 0,
     };
   }
 
@@ -64,8 +68,12 @@ const cartReducer = (state, action) => {
 const CartProvider = (props) => {
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
-    defaultCartState
+    cartStateFromLocalStorage
   );
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartState));
+  }, [cartState]);
 
   const addItemToCartHandler = (item) => {
     dispatchCartAction({ type: "ADD", item: item });
@@ -75,14 +83,12 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
 
-  const cartContext = {
+  let cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
-
-  console.log(cartState.items);
 
   return (
     <CartContext.Provider value={cartContext}>
