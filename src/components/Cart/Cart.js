@@ -10,6 +10,7 @@ const Cart = () => {
 
   const items = cartCtx.items.length;
   const totalAmount = cartCtx.totalAmount.toFixed(2);
+  const totalQuantity = cartCtx.totalQuantity;
 
   const cartItems = cartCtx.items.map((item) => (
     <CartItem
@@ -40,7 +41,7 @@ const Cart = () => {
         </div>
         <div className="subcontainer_subtotal">
           <span>
-            Subtotal({items} item):{" "}
+            Subtotal({totalQuantity} items):{" "}
             {<span className="totalamount">${totalAmount}</span>}
           </span>
         </div>

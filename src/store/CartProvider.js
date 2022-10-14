@@ -5,6 +5,7 @@ import CartContext from "./cart-context";
 const defaultCartState = {
   items: [],
   totalAmount: 0,
+  totalQuantity: 0,
 };
 
 const cartStateFromLocalStorage =
@@ -13,6 +14,7 @@ const cartStateFromLocalStorage =
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
     const updatedTotalAmount = state.totalAmount + action.item.price;
+    const updatedTotalQuantity = state.totalQuantity + 1;
 
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
@@ -35,10 +37,12 @@ const cartReducer = (state, action) => {
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
+      totalQuantity: updatedTotalQuantity,
     };
   }
 
   if (action.type === "REMOVE") {
+    const updatedTotalQuantity = state.totalQuantity - 1;
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.id
     );
@@ -59,6 +63,7 @@ const cartReducer = (state, action) => {
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount > 0 ? updatedTotalAmount : 0,
+      totalQuantity: updatedTotalQuantity > 0 ? updatedTotalQuantity : 0,
     };
   }
 
@@ -86,6 +91,7 @@ const CartProvider = (props) => {
   let cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
+    totalQuantity: cartState.totalQuantity,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
