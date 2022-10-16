@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 23px;
+    padding: 15px 5px;
 }
 
 .links{
@@ -63,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 0.1;
+    gap: 15px;
 }
 
 /*------- CgMenu --------- */
@@ -78,14 +78,28 @@
     display: none;
    }
 
-   .tab {
-    flex-grow: 0.3;
+   .tab{
+    gap: 8px;
    }
 
    .active {
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
+    color: #0F1111;
+    border: 1px solid #eeeee4;
+    border-radius: 3px;
+    padding: 1px;
+    background: #eeeee4;
    }
+
+   .cart-logo .storename {
+    font-size: 20px;
+    }
+
+    .cart-logo img {
+        width: 30px;
+        height: 30px;
+    }
 
 }
 

@@ -36,11 +36,11 @@ const Navbar = (props) => {
         <LoginTab />
         <RegisterTab />
         <CartTab />
+        <CgMenu
+          className={styles.active}
+          onClick={() => props.showMenuHandler()}
+        />
       </div>
-      <CgMenu
-        className={styles.active}
-        onClick={() => props.showMenuHandler()}
-      />
     </nav>
   );
 };
