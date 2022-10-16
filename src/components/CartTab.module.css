@@ -24,3 +24,11 @@
     text-decoration: none;
     color: #010010;
  }
+
+ /* ------  RESPONSIVE DESIGN ----- */
+
+ @media only screen and (max-width: 768px) {
+    .cart-tab{
+        display: none;
+    }
+ }

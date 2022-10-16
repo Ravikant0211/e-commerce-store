@@ -15,3 +15,9 @@
     color: #f1ffff;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+    .btn {
+        padding: 5px 10px;
+    }
+}

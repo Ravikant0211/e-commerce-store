@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CgMenu } from "react-icons/cg";
 
 import LoginTab from "./LoginTab";
 import RegisterTab from "./RegisterTab";
 import CartTab from "./CartTab";
+import logo from "../assets/shopping-cart.png";
 
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.links}>
-        <h2>OnlineShop</h2>
+        <div className={styles[`cart-logo`]}>
+          <em className={styles.storename}>Shopify</em>{" "}
+          <img src={logo} alt="cart-logo" />
+        </div>
         <ul>
           <li>
             <Link to="/">HOME</Link>
@@ -32,6 +37,10 @@ const Navbar = () => {
         <RegisterTab />
         <CartTab />
       </div>
+      <CgMenu
+        className={styles.active}
+        onClick={() => props.showMenuHandler()}
+      />
     </nav>
   );
 };

@@ -8,3 +8,9 @@
     font-weight: 600;
 }
 
+@media only screen and (max-width: 768px) {
+    .opt {
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+}

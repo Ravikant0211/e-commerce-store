@@ -16,3 +16,13 @@
     color: #6b9ea0;
 }
 
+@media only screen and (max-width: 768px) {
+    .heading {
+        font-size: 25px;
+    }
+
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

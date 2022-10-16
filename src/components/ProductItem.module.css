@@ -6,7 +6,6 @@
 }
 
 .product img {
-    /* background: #fff; */
     width: 255px;
     height: 315px;
     box-shadow: none;
@@ -27,7 +26,7 @@
 .price {
     font-size: 15px;
     font-weight: 600;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #6b9ea0;
 }
@@ -57,3 +56,28 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+    .product {
+        padding: 8px 12px;
+    }
+
+    .product img {
+        width: 255px;
+        height: 275px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+    
+    .price {
+        font-size: 18px;
+    }
+
+    .productItemBtn {
+        font-size: 15px;
+        padding: 10px 17px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+}

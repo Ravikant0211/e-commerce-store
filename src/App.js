@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -8,11 +9,19 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./components/Cart/Cart";
+import Menu from "./components/Menu/Menu";
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const setShowMenuHandler = () => {
+    setShowMenu((oldState) => !oldState);
+  };
+
   return (
     <div className="container">
-      <Navbar />
+      {showMenu && <Menu showMenuHandler={setShowMenuHandler} />}
+      <Navbar showMenuHandler={setShowMenuHandler} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

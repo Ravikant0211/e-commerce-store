@@ -34,7 +34,7 @@ const SingleProduct = () => {
     cartCtx.addItem(item);
   };
 
-  const { category, description, image, price, title, rating } = data;
+  const { category, description, image, price, title } = data;
 
   return (
     <>
@@ -49,8 +49,11 @@ const SingleProduct = () => {
             <h3 className={styles.category}>{category}</h3>
             <h1 className={styles.title}>{title}</h1>
             <strong className={styles.rating}>
-              Rating {rating.rate}
               <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star-half-stroke"></i>
             </strong>
             <h3 className={styles.price}>$ {price}</h3>
             <p className={styles.description}>{description}</p>

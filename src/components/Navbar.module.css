@@ -2,8 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-top: 1.2rem;
-    margin-bottom: 1.2rem; */
     padding: 15px 23px;
 }
 
@@ -13,20 +11,40 @@
     flex-grow: 0.3;
 }
 
-.links h2 {
-    font-size: 2.2rem;
-    color: #00171b;
+.cart-logo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart-logo .storename {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin: auto 0;
+    padding: 0;
+    color: #0F1111;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.cart-logo img {
+    width: 40px;
+    height: 40px;
+    box-shadow: none;
+    border: 0px solid #fff;
+    margin-left: 0;
 }
 
 .links ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 0.3;
 } 
 
 .links ul li{
     list-style: none;
-    margin-left: 1.5rem;
 }
 
 .links ul li a{
@@ -47,4 +65,28 @@
     align-items: center;
     flex-grow: 0.1;
 }
+
+/*------- CgMenu --------- */
+.active {
+    display: none;
+}
+
+/* -------------- RESPONSIVE DESIGN ---------------------- */
+
+@media only screen and (max-width: 768px) {
+   .links ul{
+    display: none;
+   }
+
+   .tab {
+    flex-grow: 0.3;
+   }
+
+   .active {
+    display: inline-block;
+    font-size: 18px;
+   }
+
+}
+
 
