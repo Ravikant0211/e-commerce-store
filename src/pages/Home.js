@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles["div-img"]}>
-        <img src={picture} alt="Girl wearing new costumes" />
+        <img src={picture} alt="A Girl wearing new costumes" />
       </div>
       {signUp && <Register signIn={signInHandler} />}
       {signIn && <Login signUp={singUpHandler} />}
